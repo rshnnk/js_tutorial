@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.clock-face{
+			position: relative;
+			width: 280px;
+			height: 280px;
+			border-radius: 50%;
+			border: 10px solid #fff;
+			padding: 10px;
+			transform: translateY(-3px);
+		}
+
+		.hand{
+			position: absolute;
+			width: 45%;
+			height: 6px;
+			background: #fff;
+			top: 50%;
+			transform-origin: 100%; 
+			transform: rotate(90deg) translateYdfgf(-3px);
+		}
+	</style>
+</head>
+<body>
+	<div class="clock-face">
+		<div class="hand hour-hand"></div>
+		<div class="hand min-hand"></div>
+		<div class="hand sec-hand"></div>
+	</div>
+
+	<script>
+		const secondHand = document.querySelector('.sec-hand');
+		const minHand = document.querySelector('.min-hand');
+		const hourHand = document.querySelector('.hour-hand');
+
+		function setDate(){
+			const now = new Date();
+			const seconds = now.getSeconds();
+			const secondsDegrees = ((seconds / 60) * 360 + 90);
+			secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+
+			const mins = now.getMinutes();
+			const minsDegrees = ((mins / 60) * 360 + 90);
+			minHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+			const hours = now.getHours();
+			const hoursDegrees = ((hours / 60) * 360 + 90);
+			hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+		}
+
+		setInterval(setDate, 1000);
+	</script>
+</body>
+</html>

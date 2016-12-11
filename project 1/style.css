@@ -1,0 +1,44 @@
+body {
+    background: url(https://janellesnotes.files.wordpress.com/2015/10/music-hall-auditorium.jpg) no-repeat;
+    background-size: cover;
+}
+
+.keys {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.key {
+    font-size: 2rem;
+    display: flex;
+    width: 5rem;
+    margin: 0 1rem;
+    padding: 1.5rem;
+    transition: all .09s;
+    color: #fff;
+    border: 2px solid #000;
+    background: rgba(0, 0, 0, .5);
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    border-radius: 6px;
+}
+
+.key.playing {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px yellow;
+}
+
+.sound {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    color: yellow;
+}
+
+kbd{
+	font-size: 4rem;ds
+}
